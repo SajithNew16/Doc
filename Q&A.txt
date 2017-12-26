@@ -1,0 +1,14 @@
+1) when we calculate control packets, values for RREQ, RPLY, ERROR and HELLO, are those values always going to be between 0 - 1
+No. This will be the count of RREQ’s , RREP’s received by a given node. Hence this would be a scalar value. Finally an average would be taken.
+
+2) Don't we need to consider a time period when calculating CP?
+Yes. We always calculate DT and IT in cyclic nature. After the particular cycle is over calculation will be forwarded to the table and cycle will be refreshed
+
+3) Identifying trust level flow chart, in the first decision box, shouldn't it be Global trust instead of Direct Trust?
+No. It should be Direct Trust. This is only in the initial network configuration only (No data is available at the initial stage)
+
+4) Why do we have to maintain a 'blacklist' colum in both 'Truth Table' and 'Recommendation Table'? Do they affect differently for the two scenarios? Aren't they the same for the whole thing?
+Recommendation table is only used once we are going through spiral model to calculate indirect trust. At that time identification of blacklisted nodes will temporarily hold in Recommendation table. Next, it will get updated with global trust and will be represented as a final figure at the trust table.
+
+5) When analizing past records in Spiral model what are the parameters we need to consider??
+Only the trust value.
